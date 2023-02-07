@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Director list</h1>
+<ul class="list-unstyled">
+    {% for director in director_list %}
+    <li><a href="{{ director.get_absolute_url }}">{{ director.first_name }}, {{director.last_name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

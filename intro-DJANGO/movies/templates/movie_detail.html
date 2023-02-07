@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>
+        {{ movie.title }} 
+        <span class="fs-5">
+            {{ movie.rating }} <i class="bi bi-star-fill"></i>
+        </span>
+    </h1>
+    <p>Director: <a href="{% url 'director-detail' movie.director.pk%}">{{ movie.director }}</a></p>
+    <div class="container">
+        <div class="row">
+            <img src="{{ movie.poster.url }}" alt=" {{ movie.title }}" height="300" class="col-2" >
+            <ul class="col list-unstyled">
+                <p class="fs-5">Cast:</p>
+                {% for actor in movie.actors.all %}
+
+                <li> {{ actor.first_name}}, {{ actor.last_name }}</li>
+
+                {% endfor %}
+            </ul>   
+        </div>
+        
+    </div>
+    
+{% endblock %}

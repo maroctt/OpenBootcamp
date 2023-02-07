@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>{{ director.first_name }}, {{ director.last_name}}</h1> 
+<p>{{director.date_of_birth}}{% if director.date_of_death %} - {{director.date_of_death}}{% endif %}</p>
+
+
+
+<h5>Movies</h5>
+<ul class="row list-unstyled">
+    {% for movie in director.movie_set.all %}
+    <li class="col-sm-3"><a href="{% url 'movie-detail' movie.pk%}"><img src="{{ movie.poster.url }}" alt="{{movie.title}}" height="300"></a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Movies Record</h1>
+    <p>Welcome to MoviesRecord, a website developed using <em>Django</em>!</p>
+    <hr>
+    <p>We have the following record counts:</p>
+    <ul>
+        <li><strong>Movies:</strong> {{ num_movies }}</li>
+        <li><strong>Directors:</strong> {{ num_directors }}</li>
+    </ul>
+{% endblock %}
